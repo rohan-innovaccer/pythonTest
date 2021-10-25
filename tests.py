@@ -1,5 +1,6 @@
 import unittest
 from app import cuboid_volume
+
 class TestCuboid(unittest.TestCase):
     def test_volume(self):
         self.assertAlmostEqual(cuboid_volume(2),8)
@@ -8,6 +9,9 @@ class TestCuboid(unittest.TestCase):
         self.assertAlmostEqual(cuboid_volume(5.5),166.375)
 
     def test_input_type(self):
-        self.assertRaises("TypeError", cuboid_volume("2"))
+        # returns true if TypeError is raised
+        self.assertRaises(TypeError, cuboid_volume, l = "10")
+            
 
-# unittest.main()
+if __name__ == "__main__":
+    unittest.main()
